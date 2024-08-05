@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course GPA Calculator</title>
+    <link rel="stylesheet" href="main css/sty.css">
+    <link rel="stylesheet" href="contact/contact.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/vaakash/socializer@f4c4e9/css/socializer.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
+    <link rel="shortcut icon" type="gap_icon" href="icon/gpa_icon.png">
+</head>
+<body>
+    <div id="lod">
+        <div class="loader">
+            <div class="justify-content-center jimu-primary-loading"></div>
+          </div>
+        <br><br>
+       
+      </div>
+    <section id="HOME">
+        <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,192L40,208C80,224,160,256,240,245.3C320,235,400,181,480,170.7C560,160,640,192,720,186.7C800,181,880,139,960,133.3C1040,128,1120,160,1200,160C1280,160,1360,128,1400,112L1440,96L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+        
+        <header id="top">
+            <div class="top" style="display: flex; align-items: center; justify-content: center; gap: 1em;">
+              <span><img src="icon/gpa_icon.png" alt="gpa_icon.png" class="gpaicon"></span> <h1>GPA Calculator</h1> 
+            </div>
+           <div  class="navbar" style="margin: auto 40px;">
+            <ul>
+                <li><a href="#HOME">home</a></li>
+                <li><a href="#contact">contact</a></li>
+                <li><a href="index1.html" target="_blank">faq</a></li>
+            </ul>
+           </div>
+            <div class="mobile" >
+             <img src="icon/menu.png" alt="menu" onclick="openn()" style="width:25px; height: 25px; cursor: pointer;">
+             <div class="menu" style="display: none; ">
+                <img src="icon/tabelX.png" alt="X" onclick="closee()" style="width: 30px; height: 30px; cursor: pointer; position: absolute; top: 50px; right: 25px;">
+               <div style="width: 100%; padding: 10px; border-bottom:1px solid #000000; margin-bottom: 10px;">
+                <h1 style="margin-left:20px ; margin-top: 40px; margin-bottom: 10px; font-size: 18px; color: black;">GPA Calculator</h1>
+            </div>
+                <div class="c" >
+                    <a onclick="mob()" href="#HOME"><div class="man">HOME</div></a>
+                    <a onclick="mob()" href="#contact"><div class="man">contact</div></a>
+                    <a onclick="mob()" href="index1.html" target="_blank"><div class="man">faq</div></a>
+                    
+             </div>
+            </div>
+        </header>
+    <div class="con" style="overflow: auto;">
+       
+    <form id="gpaForm" style="margin-top: 50px; ">
+        <div class="courses">
+            <div class="course">
+                <div class="he" style="padding: 5px;">
+                   <h3 class="coursecunt">Course 1</h3>
+                  
+                  </div>
+                <div class="text">
+                <input type="text" class="tex" placeholder="Enter course name">
+                </div>
+                <div class="in">
+                    <input type="number" placeholder="Credit hour" min="1" max="100" id="credit-${couCount}" name="credit-${couCount}">
+      
+                <select>
+                    <option disabled selected>Choose Grade</option>
+                    <option value="4.00">A+</option>
+                    <option value="4.00">A</option>
+                    <option value="3.75">A-</option>
+                    <option value="3.50">B+</option>
+                    <option value="3.00">B</option>
+                    <option value="2.75">B-</option>
+                    <option value="2.50">C+</option>
+                    <option value="2.00">C</option>
+                    <option value="1.75">C-</option>
+                    <option value="1.00">D</option>
+                    <option value="0.00">F</option>
+                </select>
+                      </div>
+            </div>
+
+        </div>
+        <button type="button" onclick="addcourse()" class="add button">Add Course</button>
+        <button type="submit" class="add button">Calculate GPA</button>
+        <input type="reset" class="add reset button" onclick="rese()" style="display: none;" >
+    </form>
+    <div class="result"></div>
+    <a href="#showmore"><button type="button" onclick="showmor()"  style="display: none;" class="Showinfo add" title="Show more information about table,TotalCredits,TotalPoints,GPA "> Show more info</button></a>
+    <div id="showmore" style="display: none; align-items: center; justify-content: center; flex-direction: column;">
+        <img src="icon/tabelX.png" alt="X" onclick="exit()" class="exit" style="width: 30px; height: 30px; cursor: pointer; margin-left: 300px; margin-bottom: 5px;" >
+       <div class="more" ></div>
+       <div class="moregpa" ></div>
+    </div>
+    <div class="error">
+        <div class="erroricon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none"><path fill="#393a37" d="m13 13h-2v-6h2zm0 4h-2v-2h2zm-1-15c-1.3132 0-2.61358.25866-3.82683.7612-1.21326.50255-2.31565 1.23915-3.24424 2.16773-1.87536 1.87537-2.92893 4.41891-2.92893 7.07107 0 2.6522 1.05357 5.1957 2.92893 7.0711.92859.9286 2.03098 1.6651 3.24424 2.1677 1.21325.5025 2.51363.7612 3.82683.7612 2.6522 0 5.1957-1.0536 7.0711-2.9289 1.8753-1.8754 2.9289-4.4189 2.9289-7.0711 0-1.3132-.2587-2.61358-.7612-3.82683-.5026-1.21326-1.2391-2.31565-2.1677-3.24424-.9286-.92858-2.031-1.66518-3.2443-2.16773-1.2132-.50254-2.5136-.7612-3.8268-.7612z"></path></svg>
+        </div>
+        <div class="error__title">Please fill in all fields correctly.</div>
+        <div class="error__close"><img src="icon/x.png" alt="x" onclick="clearerror()" style="width: 20px; height: 20px;" title="clear"></div>
+    </div>
+</div>
+<div class="toparrow" title="TOP" >
+    <a href="#top"><img src="icon/toparrow.png" alt="top" style="width: 25px;height: 25px;"></a>
+</div>
+<div class="contact" id="contact" >
+    <div class="contactbox" style="width: 40%; display: flex; align-items: center; justify-content: center;">
+        <form action="https://api.web3forms.com/submit" method="POST" class="form">
+            <div class="title">Comment</div>
+            <input type="hidden" name="access_key" value="ca0e3737-12d2-4d10-946d-8c1a857309c3">
+            
+            <input type="text" placeholder="Your name" class="input"  required>
+            <input type="email" placeholder="Your email" class="input"required>
+            <textarea placeholder="Your message" required></textarea>
+             
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="abotgpa" style="background-color: #fff; width: 60%;box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315); padding: 50px; border-radius: 10px;">
+        <div class="abotgpa__title">About GPA Calculator</div>
+        <p>This website is design In Ethiopia context Calculate your college GPA quickly and easily.</p>
+        <br>
+        <br>
+        <p>Read more <a href="index1.html">–About gpa.</a></p>
+        <div class="conta">
+            <br><br>
+            <h1 class="h1">Contact Us</h1>
+    
+            <div class="socializer a sr-32px sr-circle sr-opacity sr-icon-white sr-pad" id="iconf"><span class="sr-email"><a href="mailto:mankanu54@gmail.com" target="_blank" title="Email"><i class="fa fa-envelope"></i></a></span><span class="sr-telegram"><a href="https:/t.me/Gunners389" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a></span><span class="sr-github"><a href="https://github.com/kene19" target="_blank" title="Github"><i class="fab fa-github"></i></a></span><span class="sr-linkedin"><a href="https://www.linkedin.com/in/keneriyan-alemu-150abb2b7" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></span></div>
+      </div>
+    </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,32L34.3,53.3C68.6,75,137,117,206,138.7C274.3,160,343,160,411,149.3C480,139,549,117,617,96C685.7,75,754,53,823,90.7C891.4,128,960,224,1029,240C1097.1,256,1166,192,1234,165.3C1302.9,139,1371,149,1406,154.7L1440,160L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+<footer><p class="foot2">&copy;2024 / POWERED BY KENERIYAN</p></footer>
+</section>
+
+
+    <script src="js/main.js"></script>
+
+    <script>
+    
+        const topp = document.querySelector(".toparrow");
+        const menu = document.querySelector(".menu");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 400) {
+                topp.style.display = "flex"; 
+            } else {
+                topp.style.display = "none"; 
+            }
+        });
+        
+        function openn(){
+            menu.style.display = "block"
+        }
+
+        function closee(){
+            menu.style.display = "none"
+        }
+        function mob(){
+            menu.style.display = "none"
+        }
+        let loder = document.getElementById("lod");
+
+        window.addEventListener("load",function(){
+        loder.style.display = "none";
+        });
+
+    </script>
+</body>
+</html>

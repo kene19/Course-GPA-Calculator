@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    height: 200vh;
+    position: relative;
+    }
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    
+    color: #fff;
+    background: linear-gradient(30deg, rgba(2,0,36,1) 0%, rgb(18, 76, 163) 54%, rgb(0, 68, 255) 100%);
+    box-shadow: 0 30px 30px -30px rgba(12, 12, 12, 0.315);
+}
+table, th,td {
+    
+    border-collapse: collapse;
+    padding: 5px;
+}
+th{
+    color: #ffffff;
+    background-color: royalblue;
+  }
+  tr:nth-child(even) {background-color: #ccdde9;}
+  .moregpa{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: royalblue;
+    color: #fff;
+    padding: 4px;
+    margin-top: 5px;
+  }
+  .tableGPA:not(:last-child){
+    border-bottom: 1px solid rgb(255, 255, 255);
+    padding: 2px;
+    margin-bottom: 3px;
+  }
+  .kk{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .toparrow{
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    bottom: 370px;
+    background-color: #268391;
+    right: 70px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  
+  }
+  .table1{
+    display: flex; 
+    align-items: center; 
+    margin-left: 250px; 
+    margin-bottom: 30px;
+  }
+  .table2{
+    margin-top:-30px; 
+    margin-left: 30px;
+  }
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100%;
+    color: #fff;
+    background: linear-gradient(30deg, rgba(2,0,36,1) 0%, rgb(18, 76, 163) 54%, rgb(0, 68, 255) 100%);
+}
+@media screen and (max-width:700px){
+    .h1{
+        font-size: 18px;
+    }
+    .h2{
+        width: 100%;
+        font-size: 15px;
+        text-align: center;
+    }
+    .link{
+        font-size: 10px;
+    }
+    p{
+        font-size: 12px;
+    }
+    .table2{
+        margin-top:-20px; 
+        margin-left: 30px; 
+    }
+    .table1{
+        margin-left: 60px; 
+    }
+    table, th,td {
+        padding: 3px;
+        font-size: 12px;
+      }
+      .toparrow{
+        position: fixed;
+        right: 25px;
+        width: 30px;
+        height: 30px;
+      }
+      .p{
+        margin-left: 30px;
+      }
+      img{
+        width: 50%;
+        height: auto;
+
+      }
+      .tt{
+        flex-direction: column;
+      }
+}

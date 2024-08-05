@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:transparent;
+    padding: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 18px 32px; */
+}
+.contactbox{
+  flex: 1 0 300px;
+}
+.abotgpa{
+  flex: 1 0 300px;
+}
+.h1{
+    margin-left: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    
+}
+.h1::after{
+    position: absolute;
+    top: 35px;
+    left: 0;
+    content: '';
+    width: 70px;
+    height: 2px;
+    padding: 2px;
+    border-radius: 15px;
+    background-color: royalblue;
+}
+.abotgpa__title{
+    text-transform: bold;
+    
+    margin-left: 10px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.abotgpa__title::after{
+    position: absolute;
+    top: 25px;
+    left: 0;
+    content: '';
+    width: 70px;
+    height: 2px;
+    padding: 2px;
+    border-radius: 15px;
+    background-color: royalblue;
+}
+footer{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.form {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
+    
+  }
+  
+  .form .title {
+    color: royalblue;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form input {
+    outline: 0;
+    border: 1px solid rgb(219, 213, 213);
+    padding: 8px 14px;
+    border-radius: 8px;
+    width: 100%;
+    height: 50px;
+  }
+  
+  .form textarea {
+    border-radius: 8px;
+    height: 100px;
+    width: 100%;
+    resize: none;
+    outline: 0;
+    padding: 8px 14px;
+    border: 1px solid rgb(219, 213, 213);
+  }
+  
+  .form button {
+    align-self: flex-end;
+    padding: 8px;
+    outline: 0;
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: royalblue;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width:700px){
+    footer{
+      height: 40px;
+      font-size: 12px;
+    }
+    .abotgpa{
+      font-size: 12px;
+    }
+    .abotgpa__title{
+      font-size: 14px;
+    }
+  }
