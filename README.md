@@ -1,8 +1,7 @@
 <h1>Course-GPA-Calculator</h1>
-<h3>Overview<h3>
-  
-The Course-GPA-Calculator is a simple and efficient tool designed to help students calculate their Grade Point Average (GPA) based on the grades they have received in their courses. This project is intended to be easy to use, customizable, and a useful resource for both students and educators.
 
+## Overview
+The Course-GPA-Calculator is a simple and efficient tool designed to help students calculate their Grade Point Average (GPA) based on the grades they have received in their courses. This project is intended to be easy to use, customizable, and a useful resource for both students and educators.
 </br><h3>Features</h3>
 <ul>
   <li><b>User-Friendly Interface: <b>Easy to navigate and input grades.</li>
@@ -18,7 +17,7 @@ Follow the on-screen instructions to enter your courses, the grades you received
 The website will calculate and display your GPA based on the entered data.</p>
 <h3>Tooles </h3>
   <span>Html,css,js</span>
-  ###
+    
   <h3 align="left">Contact us</h3>
 
 ###
