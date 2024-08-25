@@ -1,12 +1,12 @@
 let couCount = 1;
 let error = document.querySelector(".error");
 let time = null;
-
+let result = document.querySelector('.result');
 
 
 function addcourse() {
     couCount++;
-    
+
     const courses = document.querySelector('.courses');
 
     let courDiv = document.createElement('div');
@@ -42,19 +42,19 @@ function addcourse() {
     gon.innerHTML = `X`;
     courDiv.appendChild(gon);
 }
-  
+
 let more = document.querySelector(".more");
 let moregpa = document.querySelector(".moregpa");
 
 
-document.getElementById('gpaForm').addEventListener('submit', function(e){
+document.getElementById('gpaForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
     let totalPoints = 0;
     let totalCredits = 0;
-    
+
     const courses = document.querySelectorAll('.course');
-    let result = document.querySelector('.result');
+
     let tableHtml = `
     <table>
         <thead>
@@ -67,7 +67,7 @@ document.getElementById('gpaForm').addEventListener('submit', function(e){
         </thead>
         <tbody>`;
 
-     let tbCount = 0;
+    let tbCount = 0;
 
     courses.forEach((course) => {
         let courseName = course.querySelector('input[type="text"]').value;
@@ -76,20 +76,20 @@ document.getElementById('gpaForm').addEventListener('submit', function(e){
 
         let gradeValue = parseFloat(selectElement.value);
         let creditHour = parseFloat(creditElement.value);
-       
+
         if (isNaN(gradeValue) || isNaN(creditHour)) {
             selectElement.classList.add("inva");
             creditElement.classList.add("inva");
-                ka();
-            
-            } else {
+            ka();
+
+        } else {
             selectElement.classList.remove("inva");
             creditElement.classList.remove("inva");
-            
+
             totalPoints += gradeValue * creditHour;
             totalCredits += creditHour;
-            
-            courseName.trim(); 
+
+            courseName.trim();
             tbCount++;
             tableHtml += `
             <tr>
@@ -98,85 +98,83 @@ document.getElementById('gpaForm').addEventListener('submit', function(e){
                 <td>${creditHour}</td>
                 <td>${selectElement.options[selectElement.selectedIndex].text}</td>
             </tr>`;
-            }
-         });
-      
+        }
+    });
+
     tableHtml += `</tbody> </table>`;
-    
+
     const gpa = totalCredits > 0 ? (totalPoints / totalCredits).toFixed(2) : 0;
     result.innerHTML = `Your GPA is <span class="gpacolor">${gpa}</span>`;
     gpacolor = document.querySelector(".gpacolor");
-     if (gpa >= 4.00 ) {
+    if (gpa >= 4.00) {
         gpacolor.style.backgroundColor = "green";
         gpacolor.style.color = "#fff";
-     }
-    else if  (gpa >= 3.50) {
-        gpacolor.style.backgroundColor = "#3bf00e";  
-     }
-     else if  (gpa >= 3.00) {
-        gpacolor.style.backgroundColor = "#83e90f";  
-     } 
-     else if  (gpa >= 2.50) {
-        gpacolor.style.backgroundColor = "yellow";  
-     } else {
+    }
+    else if (gpa >= 3.50) {
+        gpacolor.style.backgroundColor = "#3bf00e";
+    }
+    else if (gpa >= 3.00) {
+        gpacolor.style.backgroundColor = "#83e90f";
+    }
+    else if (gpa >= 2.50) {
+        gpacolor.style.backgroundColor = "yellow";
+    } else {
         gpacolor.style.color = "#fff";
         gpacolor.style.backgroundColor = "red";
-     }
+    }
 
-     
+
     more.innerHTML = `${tableHtml}`;
     moregpa.innerHTML = `<p class="tableGPA">TotalCredits: ${totalCredits}</p>
                          <p class="tableGPA">TotalPoints:${totalPoints}</p>
                          <p class="tableGPA">GPA : ${gpa}</p>`;
-                         
-                         showinfo.style.display = "block";
-                         reset.style.display = "block";
 
-                  
+    showinfo.style.display = "block";
+    reset.style.display = "block";
+
+
 });
 
-document.querySelector('.courses').addEventListener('click', function(event) {
+document.querySelector('.courses').addEventListener('click', function (event) {
     if (event.target.classList.contains('x')) {
         event.target.parentElement.remove();
-        
+
     }
 });
 let showmo = document.getElementById("showmore");
-let exitt =  document.querySelector('.exit');
-let showinfo =  document.querySelector('.Showinfo');
-let reset =  document.querySelector('.reset');
+let exitt = document.querySelector('.exit');
+let showinfo = document.querySelector('.Showinfo');
+let reset = document.querySelector('.reset');
 
-function showmor(){
- showmo.style.display = "flex";
- showinfo.style.display = "none";
+function showmor() {
+    showmo.style.display = "flex";
+    showinfo.style.display = "none";
 }
 
-function exit(){
+function exit() {
     exitt.style.display = "block";
     showmo.style.display = "none";
     showinfo.style.display = "block";
 }
-function rese(){
+function rese() {
     showmo.style.display = "none";
     showinfo.style.display = "none";
     reset.style.display = "none";
+    result.style.display = "none";
 }
-function clearerror(){
+function clearerror() {
 
     error.classList.add('erkanu');
     clearTimeout(time);
 }
-function ka(){
-    if(time!==null){
+function ka() {
+    if (time !== null) {
         clearTimeout(time);
-     }
+    }
     error.classList.add("erkanu1");
-    
-    time = setTimeout(() =>{
+
+    time = setTimeout(() => {
         error.classList.add('erkanu');
-    
+
     }, 3000);
 }
-
-
-
