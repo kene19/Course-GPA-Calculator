@@ -1,13 +1,15 @@
 <h1>Course-GPA-Calculator</h1>
 
 ## Overview
-The Course-GPA-Calculator is a simple and efficient tool designed to help students calculate their Grade Point Average (GPA) based on the grades they have received in their courses. This project is intended to be easy to use, customizable, and a useful resource for both students and educators.
-</br><h3>Features</h3>
-<ul>
-  <li><b>User-Friendly Interface: <b>Easy to navigate and input grades.</li>
-  <li><b>Customizable Grade Scale:<b> Supports different grading scales (e.g., A-F, numerical).</li>
-  <li><b>Detailed Breakdown: <b>Provides a detailed breakdown of grades, credits, and GPA.</li>
-</ul>
+This project is a Course GPA Calculator designed to calculate a student's GPA based on their course grades and credit hours. The calculator is developed to work within the context of the Ethiopian education system but can be adapted for use in other contexts.
+
+## Features
+- **Add Courses:** Dynamically add courses with credit hours and select the grade received.
+- **Calculate GPA:** Automatically calculate the GPA based on the grades and credit hours entered.
+- **Responsive Design:** Fully responsive design suitable for various screen sizes.
+- **Error Handling:** Validates inputs to ensure that all required fields are filled correctly.
+- **how Detailed Information:** Provides detailed information including total credits, total points, and the calculated GPA.
+- **Share Functionality:** Built-in support for sharing the GPA calculator via web share (if supported by the browser).
 </br>
 <h3>Usage</h3>
 <p>1.open by this link <a href="https://kene19.github.io/Course-GPA-Calculator/">Course-GPA-Calculator</a>  </p>
@@ -15,21 +17,14 @@ The Course-GPA-Calculator is a simple and efficient tool designed to help studen
 Follow the on-screen instructions to enter your courses, the grades you received, and the corresponding credit hours.</p>
 <p>3.View Your GPA:
 The website will calculate and display your GPA based on the entered data.</p>
-<h3>Tooles </h3>
-  <span>Html,css,js</span>
-    
-  <h3 align="left">Contact us</h3>
 
-###
+## Technologies Used
 
-<div align="left">
-  <a href="www.linkedin.com/in/ keneriyan-alemu-150abb2b7" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"  />
-  </a>
-  <a href="https://t.me/Gunners389" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/telegram/default.svg" width="52" height="40" alt="telegram logo"  />
-  </a>
-</div>
+- **HTML5:** For structuring the web page.
+- **CSS3:** For styling the web page.
+- **JavaScript:** For implementing the dynamic functionalities like adding courses, calculating GPA, and error handling.
+- ***FontAwesome:*** For icons used in the project.
+- ***Socializer:*** For social media sharing buttons.
 <hr>
 <span>Thank you for using the Course-GPA-Calculator! We hope it helps you achieve your academic goals.</span>
   
