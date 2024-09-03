@@ -6,7 +6,7 @@ let result = document.querySelector('.result');
 
 function addcourse() {
     couCount++;
-
+    
     const courses = document.querySelector('.courses');
 
     let courDiv = document.createElement('div');
@@ -49,7 +49,8 @@ let moregpa = document.querySelector(".moregpa");
 
 document.getElementById('gpaForm').addEventListener('submit', function (e) {
     e.preventDefault();
-
+    
+    result.style.display = "block";
     let totalPoints = 0;
     let totalCredits = 0;
 
