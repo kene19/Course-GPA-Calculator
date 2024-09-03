@@ -139,7 +139,7 @@ document.getElementById('gpaForm').addEventListener('submit', function (e) {
 document.querySelector('.courses').addEventListener('click', function (event) {
     if (event.target.classList.contains('x')) {
         event.target.parentElement.remove();
-
+        couCount--;
     }
 });
 let showmo = document.getElementById("showmore");
