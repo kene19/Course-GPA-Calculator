@@ -163,19 +163,20 @@ function rese() {
     reset.style.display = "none";
     result.style.display = "none";
 }
-function clearerror() {
 
-    error.classList.add('erkanu');
-    clearTimeout(time);
-}
+
 function ka() {
-    if (time !== null) {
-        clearTimeout(time);
-    }
-    error.classList.add("erkanu1");
+    const notyf = new Notyf();
 
-    time = setTimeout(() => {
-        error.classList.add('erkanu');
+notyf.error({
+  message: '! Please fill in all fields correctly.',
+  duration: 2000,
+  icon: false,
+  dismissible: true,
+  position: {
+    x: 'left',
+    y: 'top',
+  },
+})
 
-    }, 3000);
 }
